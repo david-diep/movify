@@ -112,37 +112,16 @@ export default class MovieDetails extends React.Component {
 
     if (newMoviesArray.length < 1) {
       usersAlsoLiked = null;
-    const newReviewsArray = reviewsArray.filter((reviews, index) => index < 2);
-    if (this.state.modalToggleOn === true) {
-      modal = <>
-        <Modal isOpen={this.state.addModalShow} toggle={() => this.addModal()} centered={true}>
-          <ModalBody>
 
-            <label htmlFor="lists">Which list would you like to add to?</label>
-
-            <select name="lists" id="userLists" onChange={() => this.setState({ listId: parseInt(event.target.value) })}>
-              {this.props.lists.map(item => {
-                return <option key={item.listId} value={item.listId}> {item.name}</option>;
-              })}
-            </select>
-          </ModalBody>
-          <ModalFooter>
-            <Button color="secondary" onClick={() => this.addModal()}>Cancel</Button>
-            <Button color="primary" onClick={() => { this.add(); }}>Add to List</Button>{' '}
-          </ModalFooter>
-        </Modal>
-      </>;
-    }
-
-    if (newMoviesArray < 1) {
-      usersAlsoLiked = <>
-        <h2>Users also liked:</h2>
-        <div className="row justify-content-left px-2">
+      if (newMoviesArray < 1) {
+        usersAlsoLiked = <>
+          <h2>Users also liked:</h2>
+          <div className="row justify-content-left px-2">
           No Movies Found
-        </div>
-      </>;
-    } else {
-      usersAlsoLiked =
+          </div>
+        </>;
+      } else {
+        usersAlsoLiked =
         <>
           <h2>Users also liked:</h2>
           <div className="row justify-content-left px-2">
@@ -153,16 +132,15 @@ export default class MovieDetails extends React.Component {
             })}
           </div>
         </>;
-    }
+      }
 
-    if (reviewsArray.length < 1) {
-      reviews =
+      if (reviewsArray.length < 1) {
+        reviews =
         <div className="row">
           <p>No Reviews</p>
-        </div>
-      </>;
-    } else {
-      reviews =
+        </div>;
+      } else {
+        reviews =
         <>
           <div className="row reviews">
             <h2>Reviews <img src="../images/plus-sign-icon.png"/></h2>
@@ -187,8 +165,8 @@ export default class MovieDetails extends React.Component {
           </CarouselProvider>
 
         </>;
+      }
     }
-
     return (
       <>
         <div className="container mb-5">
