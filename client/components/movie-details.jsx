@@ -204,24 +204,6 @@ export default class MovieDetails extends React.Component {
                 <i className={`far fa-eye fa-3x ${this.state.eyeIconColor}`} onClick={() => this.addRemoveMovieToList(event)} value="eye"></i>
                 <i className="far fa-list-alt fa-3x" onClick={() => this.addModal()} value="list" ></i>
               </div>
-
-              <Modal isOpen={this.state.addModalShow} toggle={() => this.addModal()} centered={true}>
-                <ModalBody>
-
-                  <label htmlFor="lists">Which list would you like to add to?</label>
-
-                  <select name="lists" id="userLists" onChange={() => this.setState({ listId: parseInt(event.target.value) })}>
-                    {this.props.lists.map(item => {
-                      return <option key={item.listId} value={item.listId}> {item.name}</option>;
-                    })}
-                  </select>
-                </ModalBody>
-                <ModalFooter>
-                  <Button color="secondary" onClick={() => this.addModal()}>Cancel</Button>
-                  <Button color="primary" onClick={() => this.addMovieToCustomList()}>Add to List</Button>
-                </ModalFooter>
-              </Modal>
-
             </div>
 
             <div className="col-6">
