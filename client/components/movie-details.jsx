@@ -111,17 +111,14 @@ export default class MovieDetails extends React.Component {
     const newMoviesArray = recommendedMoviesArray.filter((movies, index) => index < 3);
 
     if (newMoviesArray.length < 1) {
-      usersAlsoLiked = null;
-
-      if (newMoviesArray < 1) {
-        usersAlsoLiked = <>
-          <h2>Users also liked:</h2>
-          <div className="row justify-content-left px-2">
+      usersAlsoLiked = <>
+        <h2>Users also liked:</h2>
+        <div className="row justify-content-left px-2">
           No Movies Found
-          </div>
-        </>;
-      } else {
-        usersAlsoLiked =
+        </div>
+      </>;
+    } else {
+      usersAlsoLiked =
         <>
           <h2>Users also liked:</h2>
           <div className="row justify-content-left px-2">
@@ -132,15 +129,15 @@ export default class MovieDetails extends React.Component {
             })}
           </div>
         </>;
-      }
+    }
 
-      if (reviewsArray.length < 1) {
-        reviews =
+    if (reviewsArray.length < 1) {
+      reviews =
         <div className="row">
           <p>No Reviews</p>
         </div>;
-      } else {
-        reviews =
+    } else {
+      reviews =
         <>
           <div className="row reviews">
             <h2>Reviews <img src="../images/plus-sign-icon.png"/></h2>
@@ -165,7 +162,6 @@ export default class MovieDetails extends React.Component {
           </CarouselProvider>
 
         </>;
-      }
     }
     return (
       <>
