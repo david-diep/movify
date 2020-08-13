@@ -121,7 +121,7 @@ export default class MovieDetails extends React.Component {
       </div>;
     } else {
       usersAlsoLiked =
-        <div mt-1>
+        <div className="mt-1">
           <h2>Users also liked:</h2>
           <div className="row justify-content-left px-2">
             {newMoviesArray.map((item, index) => {
