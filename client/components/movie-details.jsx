@@ -113,15 +113,15 @@ export default class MovieDetails extends React.Component {
     const newMoviesArray = recommendedMoviesArray.filter((movies, index) => index < 3);
 
     if (newMoviesArray < 1) {
-      usersAlsoLiked = <>
+      usersAlsoLiked = <div className="mt-1">
         <h2>Users also liked:</h2>
-        <div className="row justify-content-left px-2">
+        <div className="row justify-content-left ml-1">
           No Movies Found
         </div>
-      </>;
+      </div>;
     } else {
       usersAlsoLiked =
-        <>
+        <div mt-1>
           <h2>Users also liked:</h2>
           <div className="row justify-content-left px-2">
             {newMoviesArray.map((item, index) => {
@@ -130,23 +130,23 @@ export default class MovieDetails extends React.Component {
               </div>;
             })}
           </div>
-        </>;
+        </div>;
     }
 
     if (reviewsArray.length < 1) {
       reviews =
         <>
-          <div className="row reviews ml-1">
+          <div className="">
             <h2>Reviews <img onClick={() => { this.handleClickReview(); }} src="../images/plus-sign-icon.png" /></h2>
           </div>
-          <div className="row ml-1">
+          <div className="">
             <p>No Reviews</p>
           </div>
         </>;
     } else {
       reviews =
         <>
-          <div className="row reviews ml-1">
+          <div className="">
             <h2>Reviews <img onClick={() => { this.handleClickReview(); }} src="../images/plus-sign-icon.png" /></h2>
           </div>
           <CarouselProvider
@@ -160,8 +160,8 @@ export default class MovieDetails extends React.Component {
               {reviewsArray.map((item, index) => {
                 return (
                   <Slide className="border border-dark" key={index} index={index}>
-                    <p className="p-1">User: {item.author}</p>
-                    <p className="p-1">{item.content}</p>
+                    <p className="p-1" style={{ fontSize: '18px' }}>User: {item.author}</p>
+                    <p className="px-1" style={{ fontSize: '14px' }}>{item.content}</p>
                   </Slide>
                 );
               })}
@@ -176,24 +176,28 @@ export default class MovieDetails extends React.Component {
         <div className="container mb-5">
           <div className="row">
             <div>
-              <button className="btn btn-outline-danger position-absolute" onClick={this.props.goBack}>&#60;Go Back</button>
-              <img className="position-absolute" onClick={() => this.handleClick()} src="../images/less-than-icon.png" ></img>
-              <img className="backdrop-poster" src={(backDropPath === null) ? '../images/image_placeholder.png' : `https://image.tmdb.org/t/p/original${backDropPath}`} style={{ width: '100%', height: '100%' }}></img>
+              <img className="position-absolute" onClick={() => this.props.goBack()} src="../images/less-than-icon.png" />
+              <div className="image-wrap">
+                <img className="backdrop-poster" src={(backDropPath === null) ? '../images/image_placeholder.png' : `https://image.tmdb.org/t/p/original${backDropPath}`} style={{ width: '100%' }} />
+                <div className="grad dark-edge"></div>
+              </div>
+
             </div>
           </div>
 
           <div className="row pt-2">
-            <div className="col-6 justify-content-between">
-              <h2 className="title" style={{ fontWeight: 'bold', textAlign: 'center' }}>{this.props.details[1].title}</h2>
+            <div className="col-6 d-flex flex-column justify-content-center">
+              <h2 className="title" style={{ fontWeight: 'bold', textAlign: 'left' }}>{this.props.details[1].title}</h2>
               <p style={{ fontWeight: 'bold' }}>Average Rating: {this.props.details[1].vote_average}</p>
 
-              <div className="d-flex justify-content-between">
+              <div className="">
                 <button>
                   <a href={`https://www.youtube.com/watch?v=${youtubeURL}`} target="_blank" rel='noopener noreferrer'> <img src="../images/play-icon.png"></img>Trailer </a>
                 </button>
-                <div className="mt-2">
-                  <span style={{ fontWeight: 'bold' }}>{this.props.details[1].runtime} mins</span>
-                </div>
+              </div>
+
+              <div className="mt-2">
+                <span style={{ fontWeight: 'bold' }}>Runtime: {this.props.details[1].runtime} mins</span>
               </div>
 
               <div className="pt-2">
@@ -210,12 +214,15 @@ export default class MovieDetails extends React.Component {
 
           </div>
 
-          <div className="row mt-2 p-2">
-            <p>{this.props.details[1].overview}</p>
-          </div>
+          <div className="row mt-2">
+            <div className="col-12">
+              <p>{this.props.details[1].overview}</p>
 
-          {reviews}
-          {usersAlsoLiked}
+              {reviews}
+              {usersAlsoLiked}
+
+            </div>
+          </div>
 
           <Modal isOpen={this.state.addModalShow} toggle={() => this.addModal()} centered={true}>
             <ModalBody>
