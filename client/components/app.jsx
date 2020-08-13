@@ -66,7 +66,7 @@ export default class App extends React.Component {
     this.changeCurrentMovieToReview = this.changeCurrentMovieToReview.bind(this);
     this.goBack = this.goBack.bind(this);
     this.getOtherUserReviews = this.getOtherUserReviews.bind(this);
-
+    this.backToProfile = this.backToProfile.bind(this);
   }
 
   logIn(email, password) {
@@ -378,7 +378,6 @@ export default class App extends React.Component {
   }
 
   changeView(newPage, userId) {
-    // userId = (typeof userId !== 'undefined') ? userId : 'undefined'
     const lastView = (newPage === this.state.view) ? this.state.lastPage : this.state.view;
     if (typeof userId === 'undefined') {
       this.setState({ view: newPage, lastPage: lastView });
@@ -386,6 +385,10 @@ export default class App extends React.Component {
       this.setState({ view: newPage, userViewed: userId, lastPage: lastView });
     }
     window.scrollTo(0, 0);
+  }
+
+  backToProfile() {
+    this.setState({ view: 'user' });
   }
 
   goBack() {
@@ -490,22 +493,26 @@ export default class App extends React.Component {
           deleteReview={this.deleteReview}
           reviews={this.state.reviews}
           changeView={this.changeView}
+          backToProfile={this.backToProfile}
         />;
+
     } else if (this.state.view === 'otherReviews') {
       pageView =
         <ViewOtherReviewsPage
           changeView={this.changeView}
           otherReviews={this.state.otherUserReviews}
+          goBack={this.goBack}
         />;
 
     } else if (this.state.view === 'otherProfile') {
       pageView =
         <OtherProfile
           changeView={this.changeView}
-          sendMessage={this.senMessage}
-          userId={this.tate.userViewed}
+          sendMessage={this.sendMessage}
+          userId={this.state.userViewed}
           goBack={this.goBack}
-          getOtherUserReviews={this.getOtherUserReviews} />;
+          getOtherUserReviews={this.getOtherUserReviews}
+          getMovieDetails={this.getMovieDetails} />;
     }
 
     if (this.state.view === 'login') {
