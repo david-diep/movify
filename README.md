@@ -46,17 +46,17 @@ Here's an example of what it looks like:
 
 2. Install all dependencies.   
 
-  ```npm install```
+   ```npm install```
 
 
 3. Start PostgreSQL server.  
 
-  ```sudo service postgresql start```
+   ```sudo service postgresql start```
 
 
 4. Create the database.  
 
-  ```createdb movify```
+   ```createdb movify```
 
 
 5. Copy and rename ```.env.example``` to ```.env``` and update with your PostgreSQL credentials.  
@@ -64,12 +64,12 @@ Here's an example of what it looks like:
 
 6. Import the database.  
 
-  ```npm run db:import```
+   ```npm run db:import```
 
 
 7. Start the project.  
 
-  ```npm run dev```
+   ```npm run dev```
 
  A local copy should then be accessible at localhost:3000 or the localhost:DEV_SERVER_PORT specified in the .env folder.  
 
