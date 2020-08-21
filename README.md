@@ -29,7 +29,7 @@ Here's an example of what it looks like:
 -User can view, add or delete movies from their favorites or watch list.   
 -User can view, create, delete, or update their reviews of a movie.   
 -User can view, send, and delete messages from other users.   
--User can edit and view their own and view other users' profiles (including uploading their own profile image).
+-User can edit and view their own and view other users' profiles (including uploading their own profile image).  
 -User can sign in, create an account, and log out.   
 -User can sort and filter movies by different genres & categories.
 
