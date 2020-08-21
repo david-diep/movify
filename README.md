@@ -40,34 +40,34 @@ Here's an example of what it looks like:
 - PostgreSQL  
 
 ### Getting Started
-Clone the repository.  
+1. Clone the repository.  
 
 ```git clone https://github.com/david-diep/movify.git```
 
-Install all dependencies.   
+2. Install all dependencies.   
 
 ```npm install```
 
 
-Start PostgreSQL server.  
+3. Start PostgreSQL server.  
 
 ```sudo service postgresql start```
 
 
-Create the database.  
+4. Create the database.  
 
 ```createdb movify```
 
 
-Copy and rename ```.env.example``` to ```.env``` and update with your PostgreSQL credentials.  
+5. Copy and rename ```.env.example``` to ```.env``` and update with your PostgreSQL credentials.  
 
 
-Import the database.  
+6. Import the database.  
 
 ```npm run db:import```
 
 
-Start the project.  
+7. Start the project.  
 
 ```npm run dev```
 
