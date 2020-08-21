@@ -42,7 +42,7 @@ Here's an example of what it looks like:
 ### Getting Started
 1. Clone the repository.  
 
-..```git clone https://github.com/david-diep/movify.git```
+.. ```git clone https://github.com/david-diep/movify.git```
 
 2. Install all dependencies.   
 
