@@ -35,21 +35,24 @@ Here's an example of what it looks like:
 
 ## Development
 ### System Requirements
-Node  
-NPM  
-PostgreSQL  
+- Node.js  
+- NPM  
+- PostgreSQL  
 
 ### Getting Started
 Clone the repository.
+```git clone https://github.com/david-diep/movify.git```
+
+Install all dependencies. 
+```npm install```.
 
 
-Install all dependencies with "npm install".
+Start PostgreSQL server.
+```sudo service postgresql start```
 
 
-Start PostgreSQL server with "sudo service postgresql start".
-
-
-Create the database "createdb cinemago".
+Create the database.
+```createdb movify```
 
 
 Copy and rename .env.example to .env and update with your PostgreSQL credentials
