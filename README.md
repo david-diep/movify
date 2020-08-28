@@ -1,5 +1,5 @@
 # Movify
-A dynamic web application for movie enthusiasts who want to journal, track and categorize their movie interests. 
+A dynamic mobile-responsive web application for movie enthusiasts who want to journal, track and categorize their movie interests. 
 
 ## Live Site
 Try the live site here: https://movify.david-diep.com/  
