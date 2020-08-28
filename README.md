@@ -2,7 +2,9 @@
 A dynamic web application for movie enthusiasts who want to journal, track and categorize their movie interests. 
 
 ## Live Site
-Try the live site here: https://movify.david-diep.com/
+Try the live site here: https://movify.david-diep.com/  
+By default, you are logged in an example account.  
+Logout to create a new account.
 
 Here's an example of what it looks like:  
 ![Movify](https://i.imgur.com/X8mV569.png "Movify") 
