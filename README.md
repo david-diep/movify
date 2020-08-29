@@ -3,8 +3,9 @@ A dynamic mobile-responsive web application for movie enthusiasts who want to jo
 
 ## Live Site
 Try the live site here: https://movify.david-diep.com/  
-By default, you are logged in an example account.  
-Logout to create a new account.
+An account you can use to test the website is:  
+Username: cody@gmail.com  
+Password: coding  
 
 Here's an example of what it looks like:  
 ![Movify](https://i.imgur.com/X8mV569.png "Movify") 
