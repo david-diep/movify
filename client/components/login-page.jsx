@@ -4,8 +4,8 @@ export default class LoginPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      password: ''
+      email: 'cody@gmail.com',
+      password: 'coding'
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -31,7 +31,7 @@ export default class LoginPage extends React.Component {
 
     return (<>
 
-      <div className="container centered">
+      <div className="container centered pt-5">
         <div className="center2 mb-4">
           <h1 className="loginTitle" >MOVIFY</h1>
           <form className="form-login" onSubmit={this.handleSubmit}>
